@@ -9,14 +9,12 @@ existsAndTruthy({x:'a',b:'b',z:undefined},'z') // false (obyektde 'z' yoxdu ona 
 function existsAndTruthy(obj,propertyName){
         for(let i in obj){
             
-            if(obj[i] === null){
+            if(obj[i] === null || obj[i] === undefined){
                 return false
 
                 
                 
                 
-            }else if(obj[i] === undefined){
-                return false
             }else if(i === propertyName){
                 return true
             }
@@ -25,7 +23,7 @@ function existsAndTruthy(obj,propertyName){
         return false
         
 }
-const a = existsAndTruthy({x:'a',y:null,b: "b"},'b')
+const a = existsAndTruthy({x:'a',y:null,b: "b"},'y')
 console.log(a);
 
 
